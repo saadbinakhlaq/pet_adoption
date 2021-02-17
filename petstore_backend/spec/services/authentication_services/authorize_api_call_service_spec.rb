@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe AuthenticationServices::AuthorizeApiCallService do
-  let(:password) { "123456" }
-  let(:email) { "email@xyz.com" }
+  let(:password) { '123456' }
+  let(:email) { 'email@xyz.com' }
   let(:user) { FactoryBot.create(:user, password: password, password_confirmation: password, email: email) }
   let(:token) do
     AuthenticationServices::EncodeUserAction.execute(user: user).token
