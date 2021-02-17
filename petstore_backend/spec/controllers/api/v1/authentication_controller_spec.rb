@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Api::V1::AuthenticationController, type: :controller do
-  let(:password) { "123456" }
-  let(:email) { "email@xyz.com" }
+  let(:password) { '123456' }
+  let(:email) { 'email@xyz.com' }
   let(:user) { FactoryBot.create(:user, password: password, password_confirmation: password, email: email) }
 
   context 'password is correct' do

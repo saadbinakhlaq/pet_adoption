@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AuthenticationServices
   class DecodeAuthHeaderAction
     extend LightService::Action

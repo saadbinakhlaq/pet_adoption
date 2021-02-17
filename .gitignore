@@ -26,3 +26,4 @@ petstore_backend/storage/*
 
 # Ignore master key for decrypting credentials and more.
 petstore_backend/config/master.key
+petstore_backend/coverage/*

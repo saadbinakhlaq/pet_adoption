@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::V1::BaseController < ApplicationController
   before_action :authenticate_request
   attr_reader :current_user
@@ -10,7 +12,7 @@ class Api::V1::BaseController < ApplicationController
     if command.success?
       @currnt_user = command.user
     else
-      render json: [{error_code: command.error_code, message: command.message }], status: :unauthorized
+      render json: [{ error_code: command.error_code, message: command.message }], status: :unauthorized
     end
   end
 

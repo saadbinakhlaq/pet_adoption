@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AuthenticationServices
   class AuthorizeApiCallService
     extend LightService::Organizer
