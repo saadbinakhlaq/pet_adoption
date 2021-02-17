@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 services:
   backend:
     container_name: petstore_backend
@@ -12,13 +12,13 @@ services:
       - db
     stdin_open: true
     tty: true    
-    command: bash -c 'bin/startup'
+    command: bash -c "rm -f /opt/app/tmp/pids/server.pid && bundle exec rails s -p 8080 -b '0.0.0.0'"
   db:
     image: postgres:13-alpine
     ports:
       - '5432:5432'
     environment:
-      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_PASSWORD: password
     volumes:
       - db_pg13:/var/lib/postgresql/data
 volumes:
