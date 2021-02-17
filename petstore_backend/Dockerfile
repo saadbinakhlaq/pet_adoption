@@ -5,6 +5,7 @@ RUN apt-get update -qq && apt-get install -y \
   build-essential \
   vim \
   postgresql-client
+RUN gem install bundler:2.2.10
 ENV APPDIR /opt/app
 RUN mkdir -p $APPDIR
 WORKDIR $APPDIR
