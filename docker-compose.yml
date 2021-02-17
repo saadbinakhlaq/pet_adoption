@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  backend:
+    container_name: petstore_backend
+    build:
+      context: ./petstore_backend
+    ports:
+      - 8080:8080
+    volumes:
+    - ./petstore_backend:/opt/app
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true    
+    command: bash -c 'bin/startup'
+  db:
+    image: postgres:13-alpine
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - db_pg13:/var/lib/postgresql/data
+volumes:
+  db_pg13:          
