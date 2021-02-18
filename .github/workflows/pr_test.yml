@@ -1,0 +1,35 @@
+name: Specs
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Testing PR
+    env:
+      COMPOSE_FILE: docker-compose.ci.yml
+      DOCKER_USER: ${{ secrets.DOCKER_USER }}
+      DOCKER_PASS: ${{ secrets.DOCKER_PASSWORD }}
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Login to DockerHub
+      run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+
+    - name: Build docker images
+      run: docker-compose build
+
+    - name: Create test db
+      run: docker-compose run backend bundle exec rake db:create
+
+    - name: Create test schema
+      run: docker-compose run backend bundle exec rake db:schema:load
+
+    - name: Run Tests
+      run: docker-compose run backend bundle exec rake
