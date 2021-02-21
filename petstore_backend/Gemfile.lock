@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 95302b6d4f627a8b5747a9817957e648eef110f5
+  branch: master
+  specs:
+    faker (2.16.0)
+      i18n (>= 1.6, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -81,6 +89,9 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.1)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     jwt (2.2.2)
     light-service (0.15.0)
       activesupport (>= 3.0.0)
@@ -96,6 +107,7 @@ GEM
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
     mimemagic (0.3.5)
+    mini_magick (4.11.0)
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
     minitest (5.14.3)
@@ -182,6 +194,10 @@ GEM
     rubocop-shopify (1.0.7)
       rubocop (~> 1.4)
     ruby-progressbar (1.11.0)
+    ruby-vips (2.0.17)
+      ffi (~> 1.9)
+    shoulda-matchers (4.5.1)
+      activesupport (>= 4.2.0)
     simplecov (0.21.2)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -214,6 +230,8 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   factory_bot_rails
+  faker!
+  image_processing (~> 1.2)
   jwt
   light-service
   listen (~> 3.3)
@@ -224,6 +242,7 @@ DEPENDENCIES
   rspec-rails (~> 4.0.2)
   rubocop
   rubocop-shopify
+  shoulda-matchers (~> 4.0)
   simplecov
   spring
   tzinfo-data
