@@ -1,0 +1,2 @@
+class ShelterSerializer < ApplicationSerializer
+end

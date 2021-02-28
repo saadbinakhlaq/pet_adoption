@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :shelter do
-    name { Faker::Company.name }
-    brand { Faker::Company.name }
-    address_line_1 { "MyText" }
+    name { 'People for Pets' }
+    brand {  }
+    address_line_1 { '' }
   end
 end
