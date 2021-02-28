@@ -1,5 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Shelter, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many(:pets).dependent(:destroy) }
+  it { should have_many(:shelter_users).dependent(:destroy) }
 end
