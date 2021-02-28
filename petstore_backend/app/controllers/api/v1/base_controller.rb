@@ -3,6 +3,8 @@
 class Api::V1::BaseController < ApplicationController
   before_action :authenticate_request
   attr_reader :current_user
+  include Response
+  include ExceptionHandler
 
   private
 
@@ -14,6 +16,10 @@ class Api::V1::BaseController < ApplicationController
     else
       render json: [{ error_code: command.error_code, message: command.message }], status: :unauthorized
     end
+  end
+
+  def guardian
+
   end
 
   def token

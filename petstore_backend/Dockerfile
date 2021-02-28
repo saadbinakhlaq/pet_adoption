@@ -1,5 +1,5 @@
 # Dockerfile
-FROM ruby:2.7
+FROM ruby:2.7.2
 LABEL maintainer="saad.18@gmail.com"
 RUN apt-get update -qq && apt-get install -y \
   build-essential \

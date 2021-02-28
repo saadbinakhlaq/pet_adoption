@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :shelter_user do
-    first_name { Faker::Name.first_name }
-    last_name { Faker::Name.last_name }
-    address_line_1 { "MyText" }
+    first_name { 'Moni' }
+    last_name { 'Zuckerberg' }
+    address_line_1 { '' }
     shelter { nil }
   end
 end
