@@ -1,5 +1,5 @@
 class Pet < ApplicationRecord
-  enum gender: {female: 0, male: 1}
+  enum gender: {female: 'female', male: 'male'}
   belongs_to :shelter
   has_many_attached :images
 

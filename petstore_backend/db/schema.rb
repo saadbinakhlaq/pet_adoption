@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2021_02_28_185825) do
     t.text "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "status", default: 0
+    t.string "status", default: "initialized", null: false
     t.index ["guardian_id"], name: "index_adoption_requests_on_guardian_id"
     t.index ["pet_id"], name: "index_adoption_requests_on_pet_id"
     t.index ["status"], name: "index_adoption_requests_on_status"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2021_02_28_185825) do
     t.bigint "shelter_id", null: false
     t.string "name"
     t.string "species"
-    t.integer "gender", default: 0, null: false
+    t.string "gender", default: "female", null: false
     t.string "color"
     t.string "additional_properties"
     t.datetime "date_of_birth"

@@ -1,9 +1,9 @@
 class AdoptionRequestStatus
   STATUSES = {
-    initialized: 0,
-    in_progress: 1,
-    accepted: 3,
-    declined: 4
+    initialized: 'initialized',
+    in_progress: 'in_progress',
+    accepted: 'accepted',
+    declined: 'declined'
   }
 
   def initialize(status)
